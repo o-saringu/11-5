@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF=8">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="midasi">
+<h1>プログラム復習コンテンツ</h1>
+<a href="https://o-saringu.github.io/mokuji/">
+<div class="home"></div>
+</a>
+</div>
+
+<div class="oomidasi"><p>配列-応用（マウスを追跡する）</div>
+
+<div class="yoko">
+	<div class="yoko1">
+	<div class="komidasi1"><p>サンプルコードの結果</p></div>
+	<img src = "11-5.png">
+	</div>
+	<div class="yoko1">
+	<div class="komidasi2"><p>サンプルコード</div>
+	<div class="code">
+		<p>　　	int num=60;
+		<p>　　	int[] x=new int[num];
+		<p>　　	int[] y=new int[num];
+		<p>　　	　
+		<p>　　	void setup(){
+		<p>　　	　size(240, 120);
+		<p>　　	　noStroke();
+		<p>　　	}
+		<p>　　　	　
+		<p>　　	void draw(){
+		<p>　　	　background(0);
+		<p>　　	　for(int i=x.length-1; i>0; i--){
+		<p>　　	　　x[i]=x[i-1];
+		<p>　　	　　y[i]=y[i-1];
+		<p>　　	　}
+		<p>　　	　x[0]=mouseX;	　
+		<p>　　	　y[0]=mouseY;
+		<p>　　	　for(int i=0; i<x.length; i++){
+		<p>　　	　　fill(i*4);
+		<p>　　	　　ellipse(x[i], y[i], 40, 40);
+		<p>　　	　}
+		<p>　　	}
+	</div>
+	</div>
+</div>
+
+
+<div class="komidasi3"><p>説明文</div>
+<div class="ep">
+	<p>　配列-応用では、マウスを追跡するプログラムを配列を使用して作成している。
+	<p>　2つの配列があり、マウスのx座標の配列とy座標の配列が記録される。
+	<p>　配列には、常に60フレーム分のマウスのxy座標が残っていて、古い座標は新しい座標に置き換えられていく。
+	<p>　新しい座標を記録する前に、配列内の各要素を1つずつ前から後ろへずらすことで常に最初の要素を新座標の記録場所として確保している。
+	<p>　フレームごとに60個の座標を描いて、配列の動きを視覚化する。
+</div>
+
+</body>
+
+
